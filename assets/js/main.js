@@ -58,21 +58,19 @@ const ProjectRenderer = (() => {
   let currentFilter = 'all';
 
   /**
-   * Fetches projects from the JSON file.
+   * Loads projects from the global PROJECTS_DATA variable.
+   * Data is loaded via <script src="./data/projects.js"> in index.html.
+   * This avoids CORS issues when opening the file directly from the filesystem.
    * @returns {Promise<Array>} Array of project objects.
    */
   async function loadProjects() {
-    try {
-      const response = await fetch('./data/projects.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      projects = await response.json();
-      return projects;
-    } catch (error) {
-      console.error('Error loading projects:', error);
-      // Fallback: try to render empty state
+    if (typeof PROJECTS_DATA !== 'undefined' && Array.isArray(PROJECTS_DATA)) {
+      projects = PROJECTS_DATA;
+    } else {
+      console.error('PROJECTS_DATA not found. Make sure data/projects.js is loaded.');
       projects = [];
-      return projects;
     }
+    return projects;
   }
 
   /**
