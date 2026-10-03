@@ -12,8 +12,8 @@
       "Power BI"
     ],
     "category": [
-      "powerbi",
-      "excel"
+      "excel",
+      "powerbi"
     ],
     "links": {
       "github": "https://github.com/tu-usuario/cohort-retention-analysis",
