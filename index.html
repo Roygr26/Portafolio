@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portafolio de Analista de Datos — Transformo datos en decisiones de negocio con SQL, Python, Power BI y más." />
+  <meta name="author" content="Roy E. Garcia Reyes" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portafolio — Analista de Datos" />
+  <meta property="og:description"
+    content="Transformo datos complejos en insights accionables que impulsan decisiones de negocio." />
+  <meta property="og:type" content="website" />
+
+  <title>Portafolio — Analista de Datos</title>
+
+  <!-- Tailwind CSS v3 (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config — extends defaults with our custom tokens
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- Favicon (inline SVG data URI) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+</head>
+
+<body class="min-h-screen">
+
+  <!-- Skip Link (Accessibility) -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50" role="navigation" aria-label="Navegación principal">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 text-lg font-bold" style="color: var(--color-text);"
+          aria-label="Inicio">
+          <span style="color: var(--color-accent);">📊</span>
+          <span class="hidden sm:inline">DataPortfolio</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#skills" class="text-sm font-medium hover:opacity-80 transition-opacity"
+            style="color: var(--color-text-secondary);">Habilidades</a>
+          <a href="#projects" class="text-sm font-medium hover:opacity-80 transition-opacity"
+            style="color: var(--color-text-secondary);">Proyectos</a>
+          <a href="#about" class="text-sm font-medium hover:opacity-80 transition-opacity"
+            style="color: var(--color-text-secondary);">Sobre Mí</a>
+          <a href="#contact" class="text-sm font-medium hover:opacity-80 transition-opacity"
+            style="color: var(--color-text-secondary);">Contacto</a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo claro" role="switch"
+            aria-checked="true">
+            <span class="icon-sun" aria-hidden="true">☀️</span>
+            <span class="icon-moon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg" style="color: var(--color-text);"
+          aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden" role="dialog" aria-label="Menú de navegación">
+      <a href="#skills" class="text-lg font-medium py-3" style="color: var(--color-text);">Habilidades</a>
+      <a href="#projects" class="text-lg font-medium py-3" style="color: var(--color-text);">Proyectos</a>
+      <a href="#about" class="text-lg font-medium py-3" style="color: var(--color-text);">Sobre Mí</a>
+      <a href="#contact" class="text-lg font-medium py-3" style="color: var(--color-text);">Contacto</a>
+      <div class="mt-4">
+        <button onclick="ThemeManager.toggle()" class="theme-toggle" aria-label="Cambiar tema">
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content">
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero pt-28 pb-16 sm:pt-36 sm:pb-24 px-4 sm:px-6 lg:px-8" aria-label="Presentación">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Label -->
+        <div class="fade-up">
+          <span class="section-label">
+            <span aria-hidden="true">👋</span> Analista de Datos
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1
+          class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-4 mb-6 fade-up stagger-1 leading-tight">
+          Transformo Datos en<br />Decisiones de Negocio
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg mb-8 max-w-2xl mx-auto fade-up stagger-2"
+          style="color: var(--color-text-secondary); line-height: 1.8;">
+          Combino rigor técnico con visión estratégica para convertir datos complejos en
+          <strong style="color: var(--color-accent);">insights accionables</strong> que impactan KPIs y
+          optimizan procesos de negocio.
+        </p>
+
+        <!-- Specialty Badges -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10 fade-up stagger-3">
+          <span class="badge">🐍 Python</span>
+          <span class="badge">🗃️ SQL</span>
+          <span class="badge">📊 Power BI</span>
+          <span class="badge">📈 Tableau</span>
+          <span class="badge">🗄️ Modelado de Datos</span>
+          <span class="badge">⚙️ Automatización</span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up stagger-4">
+          <a href="#projects" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+            Ver Proyectos
+          </a>
+          <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            Contactar / LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8" aria-label="Habilidades técnicas">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <span class="section-label fade-up">
+            <span aria-hidden="true">🛠️</span> Stack Técnico
+          </span>
+          <h2 class="section-title fade-up stagger-1">Habilidades & Herramientas</h2>
+          <p class="section-subtitle mx-auto mt-3 fade-up stagger-2">
+            Dominio de las herramientas clave para el ciclo completo de análisis de datos: desde la extracción y
+            transformación hasta la visualización y comunicación de resultados.
+          </p>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="bento-grid">
+
+          <!-- Card 1: Lenguajes y Consultas -->
+          <div class="bento-card fade-up" aria-label="Lenguajes y Consultas">
+            <div class="bento-icon" aria-hidden="true">💻</div>
+            <h3 class="text-lg font-bold mb-2" style="color: var(--color-text);">Lenguajes y Consultas</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Extracción, manipulación y análisis de datos con código eficiente y consultas optimizadas.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">SQL</span>
+              <span class="badge">Python</span>
+              <span class="badge">Pandas</span>
+              <span class="badge">NumPy</span>
+              <span class="badge">Statsmodels</span>
+            </div>
+          </div>
+
+          <!-- Card 2: BI y Visualización -->
+          <div class="bento-card fade-up stagger-1" aria-label="BI y Visualización">
+            <div class="bento-icon" aria-hidden="true">📊</div>
+            <h3 class="text-lg font-bold mb-2" style="color: var(--color-text);">BI y Visualización</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Diseño de dashboards ejecutivos y storytelling con datos para audiencias técnicas y no técnicas.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Power BI</span>
+              <span class="badge">DAX</span>
+              <span class="badge">Tableau</span>
+              <span class="badge">Matplotlib</span>
+              <span class="badge">Storytelling</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Bases de Datos y ETL -->
+          <div class="bento-card fade-up stagger-2" aria-label="Bases de Datos y ETL">
+            <div class="bento-icon" aria-hidden="true">🗄️</div>
+            <h3 class="text-lg font-bold mb-2" style="color: var(--color-text);">Bases de Datos y ETL</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Diseño de pipelines de datos, modelado relacional y procesamiento eficiente de grandes volúmenes.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">SQL Server</span>
+              <span class="badge">SQLite</span>
+              <span class="badge">Power Query</span>
+              <span class="badge">ETL</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Herramientas de Negocio -->
+          <div class="bento-card fade-up stagger-3" aria-label="Herramientas de Negocio">
+            <div class="bento-icon" aria-hidden="true">📋</div>
+            <h3 class="text-lg font-bold mb-2" style="color: var(--color-text);">Herramientas de Negocio</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Automatización de procesos repetitivos y análisis avanzado en herramientas empresariales.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Excel Avanzado</span>
+              <span class="badge">Google Sheets</span>
+              <span class="badge">Macros VBA</span>
+              <span class="badge">Automatización</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8" style="background: var(--color-surface-alt);"
+      aria-label="Proyectos destacados">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+          <span class="section-label fade-up">
+            <span aria-hidden="true">🚀</span> Proyectos
+          </span>
+          <h2 class="section-title fade-up stagger-1">Estudios de Caso</h2>
+          <p class="section-subtitle mx-auto mt-3 fade-up stagger-2">
+            Cada proyecto sigue la metodología <strong style="color: var(--color-accent);">Problema → Análisis →
+              Impacto</strong>, demostrando cómo los datos generan valor de negocio medible.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div id="filter-buttons" class="flex flex-wrap justify-center gap-2 mb-10 fade-up stagger-3" role="group"
+          aria-label="Filtrar proyectos por herramienta">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="sql">SQL</button>
+          <button class="filter-btn" data-filter="powerbi">Power BI</button>
+          <button class="filter-btn" data-filter="tableau">Tableau</button>
+          <button class="filter-btn" data-filter="excel">Excel</button>
+        </div>
+
+        <!-- Projects Grid (dynamically populated by JS) -->
+        <div id="projects-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6" aria-live="polite">
+          <!-- Loading state -->
+          <div class="col-span-full text-center py-16" style="color: var(--color-text-muted);">
+            <p class="text-lg">Cargando proyectos...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8" aria-label="Sobre mí">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="section-label fade-up">
+            <span aria-hidden="true">👤</span> Sobre Mí
+          </span>
+          <h2 class="section-title fade-up stagger-1">Enfoque de Trabajo</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <!-- Left: About Text -->
+          <div class="fade-up stagger-2">
+            <p class="about-highlight mb-6">
+              Soy un Analista de Datos con enfoque en transformar información compleja en narrativas claras
+              y accionables para equipos de negocio.
+            </p>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary); line-height: 1.8;">
+              Mi trabajo se centra en entender el <strong style="color: var(--color-text);">contexto de negocio</strong>
+              antes de tocar los datos. Creo que el análisis más valioso no es el más complejo,
+              sino el que habilita mejores decisiones más rápido.
+            </p>
+            <p class="text-sm" style="color: var(--color-text-secondary); line-height: 1.8;">
+              He trabajado en proyectos de optimización operativa, análisis financiero, retención de clientes
+              y automatización de reportes, siempre priorizando la
+              <strong style="color: var(--color-text);">claridad en la comunicación</strong> y el
+              <strong style="color: var(--color-text);">impacto medible</strong>.
+            </p>
+          </div>
+
+          <!-- Right: Key Principles -->
+          <div class="fade-up stagger-3">
+            <div class="space-y-4">
+              <!-- Principle 1 -->
+              <div class="p-4 rounded-xl"
+                style="background: var(--color-surface); border: 1px solid var(--color-border);">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-xl" aria-hidden="true">🎯</span>
+                  <h3 class="font-bold text-sm" style="color: var(--color-text);">Orientación a Resultados</h3>
+                </div>
+                <p class="text-xs" style="color: var(--color-text-secondary); line-height: 1.7;">
+                  Cada análisis parte de una pregunta de negocio y termina con una recomendación accionable respaldada
+                  por datos.
+                </p>
+              </div>
+              <!-- Principle 2 -->
+              <div class="p-4 rounded-xl"
+                style="background: var(--color-surface); border: 1px solid var(--color-border);">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-xl" aria-hidden="true">🔄</span>
+                  <h3 class="font-bold text-sm" style="color: var(--color-text);">Pensamiento Iterativo</h3>
+                </div>
+                <p class="text-xs" style="color: var(--color-text-secondary); line-height: 1.7;">
+                  Valido hipótesis con datos reales, itero sobre los hallazgos y refino los modelos hasta lograr
+                  robustez estadística.
+                </p>
+              </div>
+              <!-- Principle 3 -->
+              <div class="p-4 rounded-xl"
+                style="background: var(--color-surface); border: 1px solid var(--color-border);">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-xl" aria-hidden="true">📖</span>
+                  <h3 class="font-bold text-sm" style="color: var(--color-text);">Storytelling con Datos</h3>
+                </div>
+                <p class="text-xs" style="color: var(--color-text-secondary); line-height: 1.7;">
+                  Traduzco hallazgos técnicos en narrativas visuales que cualquier stakeholder puede entender y actuar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================
+       FOOTER / CONTACT
+       ============================================ -->
+  <footer id="contact" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
+    style="background: var(--color-surface); border-top: 1px solid var(--color-border);" role="contentinfo">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Heading -->
+      <span class="section-label fade-up">
+        <span aria-hidden="true">📬</span> Contacto
+      </span>
+      <h2 class="section-title mt-4 mb-3 fade-up stagger-1">¿Hablamos?</h2>
+      <p class="text-sm mb-10 fade-up stagger-2"
+        style="color: var(--color-text-secondary); max-width: 480px; margin-left: auto; margin-right: auto;">
+        Estoy abierto a oportunidades como Analista de Datos, colaboraciones en proyectos
+        de BI o consultoría en optimización de datos.
+      </p>
+
+      <!-- Contact Links -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 fade-up stagger-3">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="footer-link"
+          aria-label="Perfil de LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          LinkedIn
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="footer-link"
+          aria-label="Perfil de GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          </svg>
+          GitHub
+        </a>
+        <!-- Email -->
+        <a href="mailto:roygarcia.adm.26@gmail.com" class="footer-link" aria-label="Enviar correo electrónico">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          Email
+        </a>
+        <!-- CV Download -->
+        <a href="./assets/cv.pdf" download class="footer-link" aria-label="Descargar CV en PDF">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Descargar CV
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-xs" style="color: var(--color-text-muted);">
+        © <span id="current-year"></span> Tu Nombre · Hecho con datos y café ☕
+      </p>
+      <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    </div>
+  </footer>
+
+
+  <!-- Main JS -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>

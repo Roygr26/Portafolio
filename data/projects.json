@@ -1,0 +1,62 @@
+[
+  {
+    "id": "inventory-optimization",
+    "title": "Optimización de Inventarios con Análisis Predictivo",
+    "summary": "Reducción de costos de almacenamiento y quiebres de stock en una cadena de retail con +200 SKUs mediante análisis de demanda estacional y reglas de reorden automatizadas.",
+    "problem": "La empresa sufría un 18% de sobrestock en productos de baja rotación y un 12% de quiebres de stock en productos críticos, generando pérdidas de ~$340K anuales.",
+    "analysis": "Análisis de series temporales con Python (Pandas + Statsmodels), segmentación ABC/XYZ de SKUs y modelado de puntos de reorden dinámicos en SQL sobre PostgreSQL.",
+    "impact": "Reducción de sobrestock en un 42% y quiebres de stock en un 67%, logrando un ahorro estimado de $198K anuales y mejora del nivel de servicio al 96.3%.",
+    "tags": ["Python", "SQL", "PostgreSQL", "Pandas", "Estadística"],
+    "category": ["python", "sql"],
+    "links": {
+      "github": "https://github.com/tu-usuario/inventory-optimization",
+      "dashboard": null,
+      "report": "https://github.com/tu-usuario/inventory-optimization/blob/main/README.md"
+    },
+    "metrics": [
+      { "value": "-42%", "label": "Sobrestock" },
+      { "value": "-67%", "label": "Quiebres de stock" },
+      { "value": "$198K", "label": "Ahorro anual" }
+    ]
+  },
+  {
+    "id": "financial-dashboard",
+    "title": "Dashboard Financiero de Ventas y Rentabilidad",
+    "summary": "Diseño e implementación de un dashboard ejecutivo en Power BI para la dirección comercial, consolidando datos de 5 fuentes y habilitando análisis drill-down por región, producto y canal.",
+    "problem": "Los reportes financieros se generaban manualmente en Excel cada semana, con un lead time de 3 días y frecuentes errores de consolidación entre las 5 fuentes de datos.",
+    "analysis": "Modelado dimensional en estrella con DAX avanzado (time intelligence, medidas dinámicas), pipeline ETL automatizado desde SQL Server y archivos CSV hacia Power BI con Power Query.",
+    "impact": "Reducción del tiempo de reporteo de 3 días a actualización en tiempo real. Detección de un canal de ventas con margen negativo (-4.2%) que fue reestructurado, recuperando $85K trimestrales.",
+    "tags": ["Power BI", "DAX", "SQL Server", "Power Query", "Excel"],
+    "category": ["powerbi", "sql", "excel"],
+    "links": {
+      "github": "https://github.com/tu-usuario/financial-dashboard",
+      "dashboard": "https://app.powerbi.com/view?r=demo-link",
+      "report": null
+    },
+    "metrics": [
+      { "value": "3d → RT", "label": "Tiempo de reporteo" },
+      { "value": "$85K", "label": "Recuperación trimestral" },
+      { "value": "5", "label": "Fuentes consolidadas" }
+    ]
+  },
+  {
+    "id": "cohort-retention",
+    "title": "Análisis de Retención y Cohortes para SaaS B2B",
+    "summary": "Estudio de retención de clientes por cohorte mensual para una plataforma SaaS B2B, identificando los factores clave de churn y proponiendo acciones que mejoraron la retención en +11pp.",
+    "problem": "La tasa de churn mensual era del 8.5% sin visibilidad sobre en qué momento ni por qué los clientes abandonaban. El equipo de Customer Success carecía de indicadores accionables.",
+    "analysis": "Construcción de cohortes mensuales con SQL (CTEs recursivas), análisis de supervivencia con Python (lifelines), y visualización de heatmaps de retención en Matplotlib y Tableau.",
+    "impact": "Identificación de que el 60% del churn ocurría entre el mes 2 y 3. Las acciones de onboarding reforzado redujeron el churn temprano en 11pp (de 34% a 23% en la cohorte M2-M3).",
+    "tags": ["Python", "SQL", "Tableau", "Estadística", "Pandas"],
+    "category": ["python", "sql", "tableau"],
+    "links": {
+      "github": "https://github.com/tu-usuario/cohort-retention-analysis",
+      "dashboard": "https://public.tableau.com/views/demo-cohort",
+      "report": "https://github.com/tu-usuario/cohort-retention-analysis/blob/main/REPORT.md"
+    },
+    "metrics": [
+      { "value": "-11pp", "label": "Churn temprano" },
+      { "value": "60%", "label": "Churn en M2-M3 detectado" },
+      { "value": "8.5% → 5.2%", "label": "Churn mensual" }
+    ]
+  }
+]
